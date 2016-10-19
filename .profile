@@ -25,7 +25,7 @@ alias testfn="cd /var/www/dhardy.tsheets-dev.com && ./include/qa/trun.phps parse
 
 
 #If you are not using the --delete option with rsync, when you shelve a change locally, any new files that you added will not automatically get removed from the remote machine. You can clean up those files on the remote directory by running this command
-alias rclean="svn status | grep ^\? | cut -c9- | xargs -d \\n rm -r"
+alias rclean="svn status | grep ^\? | cut -c9- | xargs -d \\\\n rm -r"
 
 
 #on lntx for testing init runs
