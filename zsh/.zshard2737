@@ -1,0 +1,109 @@
+git config --global diff.prompt false
+git config --global diff.prompt false
+git config --global diff.cmd /usr/local/bin/bcomp "$LOCAL" "$REMOTE"
+git config --global diff.tool bcomp
+git config --global merge.prompt false
+git config --global merge.tool bc
+git config --global mergetool.bcomp.prompt false
+git config --global mergetool.bcomp.trustexitcode true
+git config --global mergetool.bcomp.cmd /usr/local/bin/bcomp "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
+git config --global difftool.bcomp.prompt false
+git config --global difftool.bcomp.trustexitcode true
+git config --global difftool.bcomp.cmd /usr/local/bin/bcomp "$LOCAL" "$REMOTE"
+git config --global user.email david_hardy@intuit.com
+git config --global user.name David Hardy
+git config --global difftool.prompt false
+git config --global difftool.bc trustExitCode
+git config --global mergetool.bc trustExitCode
+git config --global pull.rebase false
+git config --global pull.ff only
+git config --global push.default current
+
+
+
+echo ".iterm shell integration"
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+echo ".iterm shell integration done"
+export PATH="/Users/dhardy1/.iterm2:$PATH"
+
+# Add Visual Studio Code (code)
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+
+# remote and run tail command: ssh -nT -R 9040:localhost:9000 SOMESERVER \"tail -f /some/file/to.log\"
+alias usbwow2='system_profiler SPUSBDataType'
+alias pngwow='openssl base64 -in piclits17-logo-main.png -out foo.base64'
+
+
+function diff2() {
+bcompare "$1" "$2"
+}
+
+function revert() {
+#git reset "$1"
+#git restore "$1"
+git add .
+git reset --hard HEAD
+}
+
+#
+# need to figure out
+# git show  --ext-diff 5feff859eeeafc8ee7ce18ed66ffe0d1cad7da32
+export GIT_EXTERNAL_DIFF=/usr/local/bin/bcomp
+
+
+
+
+function stash() {
+	git stash save -u $1`date +%A_%Y_%m_%d_%H_%M_%S`
+}
+function c() {
+	code -n .
+}
+
+
+function squash8(){
+#this is how to squash your branch with 8 commits in it
+	git rebase -i HEAD~8
+}
+
+#When downloading content from a remote repo, git pull and git fetch commands are available to accomplish the task. You can consider git fetch the 'safe' version of the two commands. It will download the remote content but not update your local repo's working state, leaving your current work intact. git pull is the more aggressive alternative; it will download the remote content for the active local branch and immediately execute git merge to create a merge commit for the new remote content. If you have pending changes in progress this will cause conflicts and kick-off the merge conflict resolution flow.
+
+
+
+
+
+
+
+#If you are not using the --delete option with rsync, when you shelve a change locally, any new files that you added will not automatically get removed from the remote machine. You can clean up those files on the remote directory by running this command
+
+#bad dos monkey
+alias dir="ls -al"
+
+alias diff="git difftool $1"
+
+
+export LANG="en_US.UTF-8"
+export LC_COLLATE="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+export LC_MESSAGES="en_US.UTF-8"
+export LC_MONETARY="en_US.UTF-8"
+export LC_NUMERIC="en_US.UTF-8"
+export LC_TIME="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+export GREP_OPTIONS='--color=always'
+
+
+defaults write com.apple.appstore ShowDebugMenu -bool true
+defaults write com.apple.finder AppleShowAllFiles TRUE 
+defaults write com.apple.appstore ShowDebugMenu -bool true
+
+export EDITOR=vim
+set -o vi
+set editing-mode vi
+set keymap vi-command
+set keymap vi-insert
+
+# Odd, you have to turn this on for repeating keys
+defaults write -g ApplePressAndHoldEnabled -bool false
+
