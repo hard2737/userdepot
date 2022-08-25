@@ -9,8 +9,8 @@ git config --global mergetool.bcomp.trustexitcode true
 #git config --global mergetool.bcomp.cmd '/usr/local/bin/bcomp "$LOCAL" "$REMOTE" "$BASE" "$MERGED"'
 git config --global difftool.bcomp.prompt false
 git config --global difftool.bcomp.trustexitcode true
-#git config --global difftool.bcomp.cmd '/usr/local/bin/bcomp "$LOCAL" "$REMOTE"'
-git config --global user.email david_hardy@intuit.com
+git config --global difftool.bcomp.cmd '/usr/local/bin/bcomp "$LOCAL" "$REMOTE"'
+git config --global user.email hard2737@gmail.com
 git config --replace-all --global user.name "David Hardy"
 git config --global difftool.prompt false
 git config --global difftool.bc trustExitCode
