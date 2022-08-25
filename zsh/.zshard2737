@@ -1,15 +1,15 @@
 git config --global diff.prompt false
 git config --global diff.prompt false
-git config --global diff.cmd /usr/local/bin/bcomp "$LOCAL" "$REMOTE"
+git config --global diff.cmd '/usr/local/bin/bcomp "$LOCAL" "$REMOTE"'
 git config --global diff.tool bcomp
 git config --global merge.prompt false
 git config --global merge.tool bc
 git config --global mergetool.bcomp.prompt false
 git config --global mergetool.bcomp.trustexitcode true
-git config --global mergetool.bcomp.cmd /usr/local/bin/bcomp "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
+git config --global mergetool.bcomp.cmd '/usr/local/bin/bcomp "$LOCAL" "$REMOTE" "$BASE" "$MERGED"'
 git config --global difftool.bcomp.prompt false
 git config --global difftool.bcomp.trustexitcode true
-git config --global difftool.bcomp.cmd /usr/local/bin/bcomp "$LOCAL" "$REMOTE"
+git config --global difftool.bcomp.cmd '/usr/local/bin/bcomp "$LOCAL" "$REMOTE"'
 git config --global user.email david_hardy@intuit.com
 git config --global user.name David Hardy
 git config --global difftool.prompt false
@@ -107,3 +107,4 @@ set keymap vi-insert
 # Odd, you have to turn this on for repeating keys
 defaults write -g ApplePressAndHoldEnabled -bool false
 
+echo "done doing the .zshard2737 script" | lolcat
