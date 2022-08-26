@@ -1,3 +1,6 @@
+test -e "/Applications/Beyond\ Compare.app/Contents/MacOS/bcomp" && ln -s /Applications/Beyond\ Compare.app/Contents/MacOS/bcomp /usr/local/bin/bcompare
+test -e "/Applications/Beyond\ Compare.app/Contents/MacOS/bcomp" && ln -s /Applications/Beyond\ Compare.app/Contents/MacOS/bcomp /usr/local/bin/bcomp
+
 git config --global diff.prompt false
 git config --global diff.prompt false
 git config --global diff.cmd '/usr/local/bin/bcomp "$LOCAL" "$REMOTE"'
@@ -20,11 +23,6 @@ git config --global pull.ff only
 git config --global push.default current
 
 
-
-echo ".iterm shell integration"
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-echo ".iterm shell integration done"
-export PATH="/Users/dhardy1/.iterm2:$PATH"
 
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
@@ -70,11 +68,6 @@ function squash8(){
 #When downloading content from a remote repo, git pull and git fetch commands are available to accomplish the task. You can consider git fetch the 'safe' version of the two commands. It will download the remote content but not update your local repo's working state, leaving your current work intact. git pull is the more aggressive alternative; it will download the remote content for the active local branch and immediately execute git merge to create a merge commit for the new remote content. If you have pending changes in progress this will cause conflicts and kick-off the merge conflict resolution flow.
 
 
-
-
-
-
-
 #If you are not using the --delete option with rsync, when you shelve a change locally, any new files that you added will not automatically get removed from the remote machine. You can clean up those files on the remote directory by running this command
 
 #bad dos monkey
@@ -107,4 +100,9 @@ set keymap vi-insert
 # Odd, you have to turn this on for repeating keys
 defaults write -g ApplePressAndHoldEnabled -bool false
 
-echo "done doing the .zshard2737 script" | lolcat
+function update-zshard2737() {
+# TODO figure out how to run a diff on the local and the remote to see if an update is needed
+echo "$(curl -fsSL https://raw.githubusercontent.com/hard2737/userdepot/master/zsh/.zshard2737)" > ~/.zshard2737
+}
+
+echo "done doing the .zshard2737 script, run update-zshard2737 to get the latest" | lolcat
