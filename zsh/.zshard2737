@@ -31,6 +31,7 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 # remote and run tail command: ssh -nT -R 9040:localhost:9000 SOMESERVER \"tail -f /some/file/to.log\"
 alias usbwow2='system_profiler SPUSBDataType'
 alias pngwow='openssl base64 -in piclits17-logo-main.png -out foo.base64'
+alias ll='ls -al'
 
 
 function diff2() {
